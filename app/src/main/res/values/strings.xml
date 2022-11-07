@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Practica1erExamen</string>
+    <string name="introduzca_su_nombre">Introduzca su nombre</string>
+    <string name="introduzca_su_contraseña">Introduzca su contraseña</string>
+</resources>
