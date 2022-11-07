@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import java.net.PasswordAuthentication
 
 class MainActivity : AppCompatActivity() {
     private lateinit var btVerificar: Button;
@@ -20,19 +21,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btVerificar = findViewById(R.id.btVerificar)
-        btVerificar.setOnClickListener{enviarBienvenida()}
+        btVerificar.setOnClickListener { enviarBienvenida() }
 
         edNombre= findViewById(R.id.edNombre)
         edPassword= findViewById(R.id.edPassword)
     }
 
+
     fun enviarBienvenida(){
-        if ((edPassword.equals("abcdef*"))){
+        val password = "abcdef*";
+        if (edPassword.text.toString().equals(password)){
             val intent = Intent(this, BienvenidaActivity::class.java)
             intent.putExtra(BienvenidaActivity.EXTRA_NOMBRE, edNombre.text.toString())
             startActivity(intent)
+
         }else{
             Toast.makeText(this, getString(R.string.msj_nombre), Toast.LENGTH_LONG).show()
+
         }
     }
 
