@@ -21,12 +21,15 @@ class MainActivity : AppCompatActivity() {
 
         btVerificar = findViewById(R.id.btVerificar)
         btVerificar.setOnClickListener{enviarBienvenida()}
+
+        edNombre= findViewById(R.id.edNombre)
+        edPassword= findViewById(R.id.edPassword)
     }
 
     fun enviarBienvenida(){
-        if ((!edNombre.text.isEmpty()) and (edPassword.equals("abcdef*"))){
-            val intent = Intent(this, BienvenidoActivity::class.java)
-            intent.putExtra(BienvenidoActivity.EXTRA_NOMBRE, edNombre.text.toString())
+        if ((edPassword.equals("abcdef*"))){
+            val intent = Intent(this, BienvenidaActivity::class.java)
+            intent.putExtra(BienvenidaActivity.EXTRA_NOMBRE, edNombre.text.toString())
             startActivity(intent)
         }else{
             Toast.makeText(this, getString(R.string.msj_nombre), Toast.LENGTH_LONG).show()

@@ -50,9 +50,10 @@
         android:minHeight="48dp"
         android:text="Name"
         app:layout_constraintBottom_toTopOf="@+id/tvContraseña"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvNombre"
-        app:layout_constraintVertical_bias="0.263"
-        tools:layout_editor_absoluteX="103dp" />
+        app:layout_constraintVertical_bias="0.263" />
 
     <EditText
         android:id="@+id/edPassword"
